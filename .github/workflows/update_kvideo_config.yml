@@ -1,0 +1,186 @@
+name: Auto Update KVideo Config
+
+on:
+  push:
+    paths:
+      - 'video/config_moontv.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  transform_kvideo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Transform Config
+        shell: python
+        run: |
+          import json
+          import re
+          import os
+          from typing import Dict, List, Any
+
+          # 定义文件路径
+          INPUT_FILE = 'video/config_moontv.json'
+          OUTPUT_FILE = 'video/config_kvideo.json'
+
+          def convert_kvideo_config(original_config: Dict[str, Any]) -> List[Dict[str, Any]]:
+              """
+              将原始的 KVideo 配置转换为新的数组格式
+              """
+              result = []
+              normal_priority = 1
+              premium_priority = 1
+              
+              api_site = original_config.get("api_site", {})
+              
+              # 分离编号键和非编号键
+              numbered_keys = []
+              other_keys = []
+              
+              for key in api_site.keys():
+                  if re.match(r'^api_\d+$', key):
+                      numbered_keys.append(key)
+                  else:
+                      other_keys.append(key)
+              
+              # 对编号键进行排序
+              numbered_keys.sort(key=lambda x: int(x.replace('api_', '')))
+              
+              # Premium 组关键词
+              premium_keywords = [
+                  'AV-', 'AV', '91麻豆', '奥斯卡', '奶香香', '淫水机', '玉兔',
+                  '白嫖', '精品', '美少女', '老色逼', '色南国', '色猫', '辣椒',
+                  '香奶儿', '鲨鱼', '黄AV', 'JKUN', '番号', '森林', 'AIVin',
+                  'souav', '乐播', '麻豆', '色', '黄', '淫', '91'
+              ]
+              
+              # 转换编号的 API
+              for key in numbered_keys:
+                  item = api_site[key]
+                  id_num = int(key.replace('api_', ''))
+                  source_id = f"source_{id_num}"
+                  name = item.get("name", "")
+                  base_url = item.get("api", "")
+                  
+                  # 判断分组
+                  group = "normal"
+                  for keyword in premium_keywords:
+                      if keyword in name:
+                          group = "premium"
+                          break
+                  
+                  new_item = {
+                      "id": source_id,
+                      "name": name,
+                      "baseUrl": base_url,
+                      "group": group
+                  }
+                  
+                  if group == "premium":
+                      new_item["enabled"] = True
+                      new_item["priority"] = premium_priority
+                      premium_priority += 1
+                  else:
+                      new_item["priority"] = normal_priority
+                      normal_priority += 1
+                  
+                  result.append(new_item)
+              
+              # 转换其他 API
+              for index, key in enumerate(other_keys):
+                  item = api_site[key]
+                  source_id = f"source_{len(numbered_keys) + index + 1}"
+                  name = item.get("name", "")
+                  base_url = item.get("api", "")
+                  
+                  # 判断分组
+                  group = "normal"
+                  other_premium_keywords = [
+                      '快播', '杏吧', '森林', '黄色', '辣椒', '细胞采集黄色',
+                      'xingba', 'senlin', 'huangse', 'lajiao', 'xibao'
+                  ]
+                  
+                  for keyword in other_premium_keywords:
+                      if keyword in name.lower() or keyword in key.lower():
+                          group = "premium"
+                          break
+                  
+                  new_item = {
+                      "id": source_id,
+                      "name": name,
+                      "baseUrl": base_url,
+                      "group": group
+                  }
+                  
+                  if group == "premium":
+                      new_item["enabled"] = True
+                      new_item["priority"] = premium_priority
+                      premium_priority += 1
+                  else:
+                      new_item["priority"] = normal_priority
+                      normal_priority += 1
+                  
+                  result.append(new_item)
+              
+              return result
+
+          def main():
+              # 读取原始配置文件
+              if not os.path.exists(INPUT_FILE):
+                  print(f"Error: {INPUT_FILE} not found in {os.getcwd()}")
+                  # 列出当前目录以便调试
+                  print(f"Current directory contents: {os.listdir('.')}")
+                  if os.path.exists('video'):
+                       print(f"Video directory contents: {os.listdir('video')}")
+                  exit(1)
+
+              try:
+                  with open(INPUT_FILE, 'r', encoding='utf-8') as f:
+                      original_config = json.load(f)
+              except json.JSONDecodeError as e:
+                  print(f"Error: JSON parsing failed - {e}")
+                  exit(1)
+              
+              # 执行转换
+              converted_array = convert_kvideo_config(original_config)
+              
+              # 统计信息
+              normal_count = len([item for item in converted_array if item["group"] == "normal"])
+              premium_count = len([item for item in converted_array if item["group"] == "premium"])
+              
+              print(f"Converted {len(converted_array)} sources.")
+              print(f"Normal: {normal_count}, Premium: {premium_count}")
+
+              # 保存转换后的文件
+              with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+                  json.dump(converted_array, f, ensure_ascii=False, indent=2)
+              
+              print(f"Successfully saved to {OUTPUT_FILE}")
+
+          if __name__ == "__main__":
+              main()
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          git add video/config_kvideo.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "Auto-update config_kvideo.json structure"
+            git push
+          fi
