@@ -1,7 +1,7 @@
 [
   {
     "id": "source_1",
-    "name": "🎬-爱奇艺-",
+    "name": "🎬爱奇艺",
     "baseUrl": "https://iqiyizyapi.com/api.php/provide/vod",
     "group": "normal",
     "priority": 1
@@ -288,7 +288,7 @@
   },
   {
     "id": "source_42",
-    "name": "🔞--AIvin-",
+    "name": "🔞AIvin",
     "baseUrl": "http://lbapiby.com/api.php/provide/vod",
     "group": "normal",
     "priority": 42
@@ -316,7 +316,7 @@
   },
   {
     "id": "source_46",
-    "name": "🔞-老色逼-",
+    "name": "🔞老色逼",
     "baseUrl": "https://apilsbzy1.com/api.php/provide/vod",
     "group": "normal",
     "priority": 46
@@ -345,7 +345,7 @@
   },
   {
     "id": "source_50",
-    "name": "🔞-大奶子-",
+    "name": "🔞大奶子",
     "baseUrl": "https://apidanaizi.com/api.php/provide/vod",
     "group": "normal",
     "priority": 49
@@ -467,14 +467,14 @@
   },
   {
     "id": "source_67",
-    "name": "🔞-美少女-",
+    "name": "🔞美少女",
     "baseUrl": "https://www.msnii.com/api/json.php",
     "group": "normal",
     "priority": 63
   },
   {
     "id": "source_68",
-    "name": "🔞-黄AVZY",
+    "name": "🔞黄AVZY",
     "baseUrl": "https://www.pgxdy.com/api/json.php",
     "group": "normal",
     "priority": 64
@@ -510,7 +510,7 @@
   },
   {
     "id": "source_73",
-    "name": "🔞-奥斯卡-",
+    "name": "🔞奥斯卡",
     "baseUrl": "https://aosikazy.com/api.php/provide/vod",
     "group": "normal",
     "priority": 68
