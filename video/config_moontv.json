@@ -2,7 +2,7 @@
   "cache_time": 7200,
   "api_site": {
     "iqiyizyapi.com": {
-      "name": "🎬爱奇艺",
+      "name": "🎬-爱奇艺-",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
       "detail": "https://iqiyizyapi.com"
     },
@@ -220,7 +220,7 @@
       "detail": "https://91md.me"
     },
     "lbapiby.com": {
-      "name": "🔞AIvin",
+      "name": "🔞--AIvin-",
       "api": "http://lbapiby.com/api.php/provide/vod",
       "detail": "http://lbapiby.com"
     },
@@ -240,7 +240,7 @@
       "detail": "http://fhapi9.com"
     },
     "apilsbzy1.com": {
-      "name": "🔞老色逼",
+      "name": "🔞-老色逼-",
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "detail": "https://apilsbzy1.com"
     },
@@ -260,7 +260,7 @@
       "detail": "https://hsckzy.xyz"
     },
     "apidanaizi.com": {
-      "name": "🔞大奶子",
+      "name": "🔞-大奶子-",
       "api": "https://apidanaizi.com/api.php/provide/vod",
       "detail": "https://apidanaizi.com"
     },
@@ -350,13 +350,13 @@
     },
     "www.msnii.com": {
       "_comment": "无法搜索",
-      "name": "🔞美少女",
+      "name": "🔞-美少女-",
       "api": "https://www.msnii.com/api/json.php",
       "detail": "https://www.msnii.com"
     },
     "www.pgxdy.com": {
       "_comment": "无法搜索",
-      "name": "🔞黄AVZY",
+      "name": "🔞-黄AVZY",
       "api": "https://www.pgxdy.com/api/json.php",
       "detail": "https://www.pgxdy.com"
     },
@@ -386,7 +386,7 @@
     },
     "aosikazy.com": {
       "_comment": "禁止搜索结果",
-      "name": "🔞奥斯卡",
+      "name": "🔞-奥斯卡-",
       "api": "https://aosikazy.com/api.php/provide/vod",
       "detail": "https://aosikazy.com"
     },
