@@ -34,13 +34,26 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install base58==2.1.1
+        run: pip install -r requirements.txt
+
+      - name: Validate source file exists
+        run: |
+          if [ ! -f "$SOURCE_FILE" ]; then
+            echo "Error: source file not found: $SOURCE_FILE"
+            exit 1
+          fi
+
+      - name: Ensure output directory exists
+        run: mkdir -p video
 
       - name: Copy source config to video config
         run: cp "$SOURCE_FILE" "$VIDEO_FILE"
 
       - name: Transform Config
         run: python scripts/transform_kvideo_config.py
+
+      - name: Validate transformed JSON
+        run: python -m json.tool "$KVIDEO_FILE" > /dev/null
 
       - name: Encode file to Base58
         run: python scripts/encode_moontv_base58.py
@@ -59,3 +72,8 @@ jobs:
             git commit -m "Auto-update generated video configs [skip ci]"
             git push
           fi
+
+      - name: Report non-main branch behavior
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "Generated outputs updated in workspace, but auto-push is disabled on non-main branches."
