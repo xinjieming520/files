@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: auto-update-video-configs-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update_video_configs:
     runs-on: ubuntu-latest
@@ -22,10 +26,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.x'
+          python-version: '3.12'
+          cache: 'pip'
 
       - name: Install dependencies
-        run: pip install base58
+        run: pip install base58==2.1.1
 
       - name: Copy source config to video config
         run: cp source/LunaTV-config.json video/config_moontv.json
@@ -37,6 +42,7 @@ jobs:
         run: python scripts/encode_moontv_base58.py
 
       - name: Commit and push changes
+        if: github.ref == 'refs/heads/main'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -46,6 +52,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected. Skipping commit."
           else
-            git commit -m "Auto-update generated video configs"
+            git commit -m "Auto-update generated video configs [skip ci]"
             git push
           fi
