@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      SOURCE_FILE: source/LunaTV-config.json
+      VIDEO_FILE: video/config_moontv.json
+      KVIDEO_FILE: video/config_kvideo.json
+      BASE58_FILE: video/config_moontv_base58.json
 
     steps:
       - name: Checkout code
@@ -33,7 +37,7 @@ jobs:
         run: pip install base58==2.1.1
 
       - name: Copy source config to video config
-        run: cp source/LunaTV-config.json video/config_moontv.json
+        run: cp "$SOURCE_FILE" "$VIDEO_FILE"
 
       - name: Transform Config
         run: python scripts/transform_kvideo_config.py
@@ -47,7 +51,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          git add video/config_moontv.json video/config_kvideo.json video/config_moontv_base58.json
+          git add "$VIDEO_FILE" "$KVIDEO_FILE" "$BASE58_FILE"
 
           if git diff --staged --quiet; then
             echo "No changes detected. Skipping commit."

@@ -3,8 +3,8 @@ import os
 import re
 from typing import Any, Dict, List
 
-INPUT_FILE = "source/LunaTV-config.json"
-OUTPUT_FILE = "video/config_kvideo.json"
+INPUT_FILE = os.getenv("SOURCE_FILE", "source/LunaTV-config.json")
+OUTPUT_FILE = os.getenv("KVIDEO_FILE", "video/config_kvideo.json")
 
 
 def convert_kvideo_config(original_config: Dict[str, Any]) -> List[Dict[str, Any]]:

@@ -2,8 +2,8 @@ import os
 
 import base58
 
-INPUT_PATH = "source/LunaTV-config.json"
-OUTPUT_PATH = "video/config_moontv_base58.json"
+INPUT_PATH = os.getenv("SOURCE_FILE", "source/LunaTV-config.json")
+OUTPUT_PATH = os.getenv("BASE58_FILE", "video/config_moontv_base58.json")
 
 
 def main() -> None:
