@@ -3,7 +3,7 @@ import os
 import re
 from typing import Any, Dict, List
 
-INPUT_FILE = "video/config_moontv.json"
+INPUT_FILE = "source/LunaTV-config.json"
 OUTPUT_FILE = "video/config_kvideo.json"
 
 

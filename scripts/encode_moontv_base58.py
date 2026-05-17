@@ -2,7 +2,7 @@ import os
 
 import base58
 
-INPUT_PATH = "video/config_moontv.json"
+INPUT_PATH = "source/LunaTV-config.json"
 OUTPUT_PATH = "video/config_moontv_base58.json"
 
 
