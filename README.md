@@ -1,26 +1,28 @@
-# 视频资源配置中心
+目录结构
 
-## 目录结构
+- 源文件
 
-```text
-files/
-├── source/
-   └── LunaTV-config.json
-├── video/
-   ├── config_moontv.json
-   ├── config_kvideo.json
-   ├── config_moontv_base58.json
-   └── tvbox.json
+  ```text
+  source/LunaTV-config.json
+  ```
 
-```
+- 输出文件
 
-## 文件说明
+  ```text
+  # 工作流复制生成
+  video/config_moontv.json
+  
+  # 转换为 KVideo 格式文件
+  video/config_kvideo.json
+  
+  # 转换为 moonTV Base58编码文件
+  video/config_moontv_base58.json
+  ```
 
-1. `source/LunaTV-config.json`
-源配置文件
-2. `video/config_moontv.json`
-由工作流复制生成
-3. `video/config_kvideo.json`
-由转换脚本从源配置转换得到的 KVideo 格式文件
-4. `video/config_moontv_base58.json`
-由编码脚本对源配置进行 Base58 编码得到
+- TVbox源
+
+  ```text
+  video/tvbox.json
+  ```
+
+  
