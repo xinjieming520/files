@@ -12,17 +12,18 @@
   # 工作流复制生成
   video/config_moontv.json
   
-  # 转换为 KVideo 格式文件
+  # 工作流转换为 KVideo 源
   video/config_kvideo.json
   
-  # 转换为 moonTV Base58编码文件
+  # 工作流转换为 moonTV 源(Base58编码)
   video/config_moontv_base58.json
   ```
 
-- TVbox源
+- TVbox 源
 
   ```text
+  # 未参与工作流
   video/tvbox.json
   ```
-
+  
   
