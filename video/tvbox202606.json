@@ -85,6 +85,10 @@
       "url": "https://6492.kstore.space/xnf/xnf.json"
     },
     {
+      "name": "真心线路",
+      "url": "https://cnb.cool/fish2018/zx/-/git/raw/master/FongMi.json"
+    },
+    {
       "name": "香雅晴线",
       "url": "https://gh-proxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"
     },
@@ -155,6 +159,10 @@
     {
       "name": "小盒子4K",
       "url": "http://xhztv.top/4k.json"
+    },
+    {
+      "name": "小盒子单仓",
+      "url": "http://xhztv.top/xhz"
     }
   ]
 }
