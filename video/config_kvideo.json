@@ -128,7 +128,7 @@
   {
     "id": "source_19",
     "name": "🎬金鹰点播",
-    "baseUrl": "https://jinyingzy.com/api.php/provide/vod",
+    "baseUrl": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
     "group": "normal",
     "priority": 19
   },
@@ -170,14 +170,14 @@
   {
     "id": "source_25",
     "name": "🎬如意资源",
-    "baseUrl": "https://pz.v88.qzz.io/?url=https://cj.rycjapi.com/api.php/provide/vod",
+    "baseUrl": "https://cj.rycjapi.com/api.php/provide/vod",
     "group": "normal",
     "priority": 25
   },
   {
     "id": "source_26",
     "name": "🎬豪华资源",
-    "baseUrl": "https://pz.v88.qzz.io/?url=https://hhzyapi.com/api.php/provide/vod",
+    "baseUrl": "https://hhzyapi.com/api.php/provide/vod",
     "group": "normal",
     "priority": 26
   },
@@ -316,20 +316,13 @@
   },
   {
     "id": "source_46",
-    "name": "🔞优优资源",
-    "baseUrl": "https://www.yytv4.cc/api.php/provide/vod",
+    "name": "🔞小鸡资源",
+    "baseUrl": "https://api.xiaojizy.live/provide/vod",
     "group": "normal",
     "priority": 46
   },
   {
     "id": "source_47",
-    "name": "🔞小鸡资源",
-    "baseUrl": "https://api.xiaojizy.live/provide/vod",
-    "group": "normal",
-    "priority": 47
-  },
-  {
-    "id": "source_48",
     "name": "🔞黄色仓库",
     "baseUrl": "https://hsckzy.xyz/api.php/provide/vod",
     "group": "premium",
@@ -337,35 +330,35 @@
     "priority": 1
   },
   {
-    "id": "source_49",
+    "id": "source_48",
     "name": "🔞-大奶子-",
     "baseUrl": "https://apidanaizi.com/api.php/provide/vod",
+    "group": "normal",
+    "priority": 47
+  },
+  {
+    "id": "source_49",
+    "name": "🔞jkun资源",
+    "baseUrl": "https://jkunzyapi.com/api.php/provide/vod",
     "group": "normal",
     "priority": 48
   },
   {
     "id": "source_50",
-    "name": "🔞jkun资源",
-    "baseUrl": "https://jkunzyapi.com/api.php/provide/vod",
+    "name": "🔞乐播资源",
+    "baseUrl": "https://lbapi9.com/api.php/provide/vod",
     "group": "normal",
     "priority": 49
   },
   {
     "id": "source_51",
-    "name": "🔞乐播资源",
-    "baseUrl": "https://lbapi9.com/api.php/provide/vod",
+    "name": "🔞奶香资源",
+    "baseUrl": "https://Naixxzy.com/api.php/provide/vod",
     "group": "normal",
     "priority": 50
   },
   {
     "id": "source_52",
-    "name": "🔞奶香资源",
-    "baseUrl": "https://Naixxzy.com/api.php/provide/vod",
-    "group": "normal",
-    "priority": 51
-  },
-  {
-    "id": "source_53",
     "name": "🔞森林资源",
     "baseUrl": "https://beiyong.slapibf.com/api.php/provide/vod",
     "group": "premium",
@@ -373,78 +366,78 @@
     "priority": 2
   },
   {
-    "id": "source_54",
+    "id": "source_53",
     "name": "🔞辣椒资源",
-    "baseUrl": "https://pz.v88.qzz.io/?url=https://apilj.com/api.php/provide/vod",
+    "baseUrl": "https://apilj.com/api.php/provide/vod",
     "group": "premium",
     "enabled": true,
     "priority": 3
   },
   {
-    "id": "source_55",
+    "id": "source_54",
     "name": "🔞鲨鱼资源",
     "baseUrl": "https://shayuapi.com/api.php/provide/vod",
+    "group": "normal",
+    "priority": 51
+  },
+  {
+    "id": "source_55",
+    "name": "🔞豆豆资源",
+    "baseUrl": "https://api.douapi.cc/api.php/provide/vod",
     "group": "normal",
     "priority": 52
   },
   {
     "id": "source_56",
-    "name": "🔞豆豆资源",
-    "baseUrl": "https://api.douapi.cc/api.php/provide/vod",
+    "name": "🔞滴滴资源",
+    "baseUrl": "https://api.ddapi.cc/api.php/provide/vod",
     "group": "normal",
     "priority": 53
   },
   {
     "id": "source_57",
-    "name": "🔞滴滴资源",
-    "baseUrl": "https://api.ddapi.cc/api.php/provide/vod",
+    "name": "🔞黑料资源",
+    "baseUrl": "https://www.heiliaozyapi.com/api.php/provide/vod",
     "group": "normal",
     "priority": 54
   },
   {
     "id": "source_58",
-    "name": "🔞黑料资源",
-    "baseUrl": "https://www.heiliaozyapi.com/api.php/provide/vod",
+    "name": "🔞百万资源",
+    "baseUrl": "https://api.bwzyz.com/api.php/provide/vod",
     "group": "normal",
     "priority": 55
   },
   {
     "id": "source_59",
-    "name": "🔞百万资源",
-    "baseUrl": "https://api.bwzyz.com/api.php/provide/vod",
+    "name": "🔞桃花资源",
+    "baseUrl": "https://thzy1.me/api.php/provide/vod",
     "group": "normal",
     "priority": 56
   },
   {
     "id": "source_60",
-    "name": "🔞桃花资源",
-    "baseUrl": "https://thzy1.me/api.php/provide/vod",
+    "name": "🔞精品资源",
+    "baseUrl": "https://www.jingpinx.com/api.php/provide/vod",
     "group": "normal",
     "priority": 57
   },
   {
     "id": "source_61",
-    "name": "🔞精品资源",
-    "baseUrl": "https://www.jingpinx.com/api.php/provide/vod",
+    "name": "🔞 CK-资源",
+    "baseUrl": "https://ckzy.me/api.php/provide/vod",
     "group": "normal",
     "priority": 58
   },
   {
     "id": "source_62",
-    "name": "🔞 CK-资源",
-    "baseUrl": "https://ckzy.me/api.php/provide/vod",
+    "name": "🔞souavZY",
+    "baseUrl": "https://api.souavzyw.net/api.php/provide/vod",
     "group": "normal",
     "priority": 59
   },
   {
     "id": "source_63",
-    "name": "🔞souavZY",
-    "baseUrl": "https://api.souavzyw.net/api.php/provide/vod",
-    "group": "normal",
-    "priority": 60
-  },
-  {
-    "id": "source_64",
     "name": "🔞细胞资源",
     "baseUrl": "https://www.xxibaozyw.com/api.php/provide/vod",
     "group": "premium",
@@ -452,35 +445,35 @@
     "priority": 4
   },
   {
-    "id": "source_65",
+    "id": "source_64",
     "name": "🔞香蕉资源",
     "baseUrl": "https://www.xiangjiaozyw.com/api.php/provide/vod",
+    "group": "normal",
+    "priority": 60
+  },
+  {
+    "id": "source_65",
+    "name": "🔞-美少女-",
+    "baseUrl": "https://www.msnii.com/api/json.php",
     "group": "normal",
     "priority": 61
   },
   {
     "id": "source_66",
-    "name": "🔞-美少女-",
-    "baseUrl": "https://www.msnii.com/api/json.php",
+    "name": "🔞-黄AVZY",
+    "baseUrl": "https://www.pgxdy.com/api/json.php",
     "group": "normal",
     "priority": 62
   },
   {
     "id": "source_67",
-    "name": "🔞-黄AVZY",
-    "baseUrl": "https://www.pgxdy.com/api/json.php",
+    "name": "🔞白嫖资源",
+    "baseUrl": "https://www.kxgav.com/api/json.php",
     "group": "normal",
     "priority": 63
   },
   {
     "id": "source_68",
-    "name": "🔞白嫖资源",
-    "baseUrl": "https://www.kxgav.com/api/json.php",
-    "group": "normal",
-    "priority": 64
-  },
-  {
-    "id": "source_69",
     "name": "🔞杏吧资源",
     "baseUrl": "https://xingba222.com/api.php/provide/vod",
     "group": "premium",
@@ -488,31 +481,31 @@
     "priority": 5
   },
   {
-    "id": "source_70",
+    "id": "source_69",
     "name": "🔞大地资源",
     "baseUrl": "https://dadiapi.com/feifei",
+    "group": "normal",
+    "priority": 64
+  },
+  {
+    "id": "source_70",
+    "name": "🔞色猫资源",
+    "baseUrl": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
     "group": "normal",
     "priority": 65
   },
   {
     "id": "source_71",
-    "name": "🔞色猫资源",
-    "baseUrl": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
+    "name": "🔞-奥斯卡-",
+    "baseUrl": "https://aosikazy.com/api.php/provide/vod",
     "group": "normal",
     "priority": 66
   },
   {
     "id": "source_72",
-    "name": "🔞-奥斯卡-",
-    "baseUrl": "https://aosikazy.com/api.php/provide/vod",
-    "group": "normal",
-    "priority": 67
-  },
-  {
-    "id": "source_73",
     "name": "🔞丝袜资源",
     "baseUrl": "https://siwazyw.tv/api.php/provide/vod",
     "group": "normal",
-    "priority": 68
+    "priority": 67
   }
 ]
